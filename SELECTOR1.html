@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Example</title>
+
+  <style>
+    /* ===============================
+       1) ELEMENT SELECTOR
+    =============================== */
+    h1 {
+      color: darkblue;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      color: black;
+    }
+
+    /* ===============================
+       2) ID SELECTOR
+    =============================== */
+    #uniqueBox {
+      background-color: lightgreen;
+      padding: 10px;
+      border: 2px solid green;
+    }
+
+    /* ===============================
+       3) CLASS SELECTOR
+    =============================== */
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+
+    /* ===============================
+       4) UNIVERSAL SELECTOR
+    =============================== */
+    * {
+      font-family: Arial, sans-serif;
+      margin: 5px;
+    }
+
+    /* ===============================
+       5) GROUP SELECTOR
+    =============================== */
+    h2, h3, h4 {
+      color: darkred;
+      text-decoration: underline;
+    }
+
+    /* ===============================
+       6) ATTRIBUTE SELECTOR
+    =============================== */
+    input[type="text"] {
+      border: 2px solid blue;
+      padding: 5px;
+    }
+
+    a[target="_blank"] {
+      color: purple;
+      font-weight: bold;
+    }
+
+    /* ===============================
+       7) COMBINATORS
+    =============================== */
+
+    /* Descendant Selector (space) */
+    div p {
+      color: darkgreen;
+    }
+
+    /* Child Selector (>) */
+    div > span {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Adjacent Sibling Selector (+) */
+    h2 + p {
+      background-color: lightblue;
+      padding: 5px;
+    }
+
+    /* General Sibling Selector (~) */
+    h3 ~ p {
+      border-left: 4px solid orange;
+      padding-left: 10px;
+    }
+
+    /* ===============================
+       8) PSEUDO CLASS SELECTORS
+    =============================== */
+    button:hover {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+
+    a:visited {
+      color: brown;
+    }
+
+    input:focus {
+      background-color: lightpink;
+    }
+
+    li:first-child {
+      color: green;
+      font-weight: bold;
+    }
+
+    li:last-child {
+      color: blue;
+      font-weight: bold;
+    }
+
+    li:nth-child(2) {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* ===============================
+       9) PSEUDO ELEMENT SELECTORS
+    =============================== */
+    p::first-letter {
+      font-size: 30px;
+      color: darkred;
+      font-weight: bold;
+    }
+
+    p::first-line {
+      color: darkblue;
+    }
+
+    h4::before {
+      content: "👉 ";
+      color: red;
+    }
+
+    h4::after {
+      content: " ✅";
+      color: green;
+    }
+
+    ::selection {
+      background-color: black;
+      color: white;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <h1>CSS Selectors Example</h1>
+
+  <!-- Element Selector -->
+  <h2>1) Element Selector</h2>
+  <p>This paragraph is styled using element selector.</p>
+
+  <!-- ID Selector -->
+  <h2>2) ID Selector</h2>
+  <div id="uniqueBox">This div is styled using ID Selector (#uniqueBox).</div>
+
+  <!-- Class Selector -->
+  <h2>3) Class Selector</h2>
+  <p class="highlight">This paragraph is styled using class selector (.highlight).</p>
+
+  <!-- Universal Selector -->
+  <h2>4) Universal Selector</h2>
+  <p>Universal selector (*) applies font and margin to all elements.</p>
+
+  <!-- Group Selector -->
+  <h2>5) Group Selector</h2>
+  <h3>This is h3</h3>
+  <h4>This is h4</h4>
+
+  <!-- Attribute Selector -->
+  <h2>6) Attribute Selector</h2>
+  <input type="text" placeholder="Text input (type=text)">
+  <br><br>
+  <a href="https://google.com" target="_blank">Google Link (target=_blank)</a>
+
+  <!-- Combinators -->
+  <h2>7) Combinators</h2>
+
+  <div>
+    <p>This is Descendant Selector example (div p).</p>
+
+    <span>This is Child Selector example (div > span).</span>
+
+    <section>
+      <span>This span is NOT direct child of div, so child selector will not apply.</span>
+    </section>
+  </div>
+
+  <h2>Adjacent Sibling Selector (+)</h2>
+  <p>This paragraph comes right after h2 so it is styled.</p>
+
+  <h3>General Sibling Selector (~)</h3>
+  <p>This is sibling paragraph 1 after h3.</p>
+  <p>This is sibling paragraph 2 after h3.</p>
+
+  <!-- Pseudo Class Selectors -->
+  <h2>8) Pseudo Class Selectors</h2>
+
+  <button>Hover Me</button>
+  <br><br>
+
+  <input type="text" placeholder="Click to focus (focus effect)">
+  <br><br>
+
+  <ul>
+    <li>First item (first-child)</li>
+    <li>Second item (nth-child(2))</li>
+    <li>Third item</li>
+    <li>Last item (last-child)</li>
+  </ul>
+
+  <!-- Pseudo Element Selectors -->
+  <h2>9) Pseudo Element Selectors</h2>
+
+  <p>This paragraph uses ::first-letter and ::first-line pseudo elements.</p>
+
+  <h4>This heading uses ::before and ::after</h4>
+
+  <p>Select any text to see ::selection effect.</p>
+
+</body>
+</html>
